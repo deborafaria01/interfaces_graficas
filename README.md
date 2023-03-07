@@ -5,3 +5,4 @@
 #### Tecnologia utilizada: Javascript 
 
 #### Integrantes: Debora Faria 
+ Minha nota é 10

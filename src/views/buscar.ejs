@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Busca de Livros</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container mt-3">
+		<h1>Busca de Livros</h1>
+		<form>
+			<div class="form-group">
+				<label for="titulo">Título:</label>
+				<input type="text" class="form-control" id="titulo" name="titulo">
+			</div>
+			<div class="form-group">
+				<label for="autor">Autor:</label>
+				<input type="text" class="form-control" id="autor" name="autor">
+			</div>
+			<button type="submit" class="btn btn-primary">Buscar</button>
+			<button type="button" class="btn btn-secondary" id="gerarRelatorio">Gerar Relatório</button>
+		</form>
+	</div>
+
+	<div class="container mt-3" id="resultadosBusca">
+		<h2>Resultados da Busca</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Número de Registro</th>
+					<th>Título</th>
+					<th>Assunto</th>
+					<th>Autor</th>
+					<th>Data de Publicação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Resultados da Busca Serão Adicionados Aqui -->
+			</tbody>
+		</table>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		$(function() {
+			// Função para buscar os livros
+			$('form').submit(function(e) {
+				e.preventDefault(); // Previne o comportamento padrão do formulário
+				var titulo = $('#titulo').val();
+				var autor = $('#autor').val();
+				$.ajax({
+					method: 'GET',
+					url: 'busca_livros.php', // Arquivo PHP responsável por fazer a busca no banco de dados
+					data: {
+						titulo: titulo,
+						autor: autor
+					},
+					success: function(response) {
+						$('#resultadosBusca tbody').html(response); // Adiciona os resultados da busca na tabela
+					}
+				});
+			});
+
+			// Função para gerar o relatório
+			$('#gerarRelatorio').click(function() {
+				var codigo = Math.floor(Math.random() * (99999 - 10001 + 1)) + 10001; // Gera um código aleatório de 5 dígitos
+				var url = 'relatorio.php?codigo=' + codigo; // URL para recuperar os resultados da busca
+				window.open(url, '_blank'); // Abre o relatório em uma nova aba do navegador
+			});
+		});
+	</script>
+</body>
+</html>

@@ -7,14 +7,6 @@
 #### Integrantes: Debora Faria 
  Minha nota é 10
 
-
-
-Estrutura de pastas:
-
-* src\models: Nesse caso um modelo simples de uma classe que representa um projeto.
-* src\views: Templates, incluindo a base para headers, footers e conteúdo principal.
-* src\public: Arquivos publicamente acessíveis: imagens, css, js (front end), etc.
-
 Para executar a aplicação, dentro da pasta src, da linha de comando digitar:
 
 ```console

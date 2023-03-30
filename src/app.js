@@ -14,10 +14,9 @@ app.get('/', loginHandler);
 
 app.get('/cadastro', cadastroHandler);
 
-app.get('/buscar', cadastroHandler);
+app.get('/index_busca', index_buscaHandler);
 
 app.listen(port, listenHandler);
-
 
 function listenHandler(){
     console.log(`Executando na porta ${port}! Segue o link http://localhost:5000/`);
@@ -25,19 +24,16 @@ function listenHandler(){
 
 
 function loginHandler(req, res){
-    /* Os dados a seguir, em uma aplicação real, deveriam vir de um BD */
    
     res.render('login.ejs');    
 }
 
 function cadastroHandler(req, res){
-    /* Os dados a seguir, em uma aplicação real, deveriam vir de um BD */
-   
+
     res.render('cadastro.ejs');    
 }
 
-function buscarHandler(req, res){
-    /* Os dados a seguir, em uma aplicação real, deveriam vir de um BD */
+function index_buscaHandler(req, res){
    
-    res.render('buscar.ejs');    
+    res.render('index_busca.ejs');    
 }

@@ -30,9 +30,47 @@
 		<label for="data">Data de Publicação:</label>
 		<input type="date" id="data" name="data" required>
 
-		<button type="submit">Cadastrar</button>
+		<button  id="meuBotao" type="submit">Cadastrar</button>
 	</form>
+	
+	<script>
+			// Seleciona o formulário
+			const form = document.querySelector('form');
 
-	<script src="script.js"></script>
+			// Adiciona um evento de envio ao formulário
+			form.addEventListener('submit', (event) => {
+			// Evita que a página seja recarregada ao enviar o formulário
+			event.preventDefault();
+
+			// Obtém os valores dos campos
+			const registro = document.getElementById('registro').value;
+			const titulo = document.getElementById('titulo').value;
+			const categoria = document.getElementById('categoria').value;
+			const autor = document.getElementById('autor').value;
+			const data = document.getElementById('data').value;
+
+			// Verifica se todos os campos foram preenchidos
+			if (registro && titulo && categoria && autor && data) {
+				// Exibe a mensagem de sucesso
+				alert('Livro cadastrado com sucesso!');
+				
+				// Limpa os campos do formulário
+				document.getElementById('registro').value = '';
+				document.getElementById('titulo').value = '';
+				document.getElementById('categoria').value = '';
+				document.getElementById('autor').value = '';
+				document.getElementById('data').value = '';
+			} else {
+				// Exibe uma mensagem de erro caso algum campo esteja vazio
+				alert('Por favor, preencha todos os campos.');
+			}
+			});		
+  	</script>
+
 </body>
 </html>
+
+
+
+
+  

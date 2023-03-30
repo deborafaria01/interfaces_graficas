@@ -1,0 +1,123 @@
+/* Estilos globais */
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  form {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    margin-left: 20%;
+  }
+  
+  label {
+    font-size: 15px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 400px;
+    font-size: 16px;
+  }
+  
+  button[type="button"] {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Estilos para a tabela de resultados */
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    max-width: none;
+    margin-top: 45px;
+    margin-left: 24em;
+    margin-bottom: 60px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  th {
+    background-color: #000800;
+    color: white;
+  }
+  
+  /* Estilos para o relatório de resultados */
+  #print-button {
+    display: block;
+    margin: 80px auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #print-button:hover {
+    background-color: #3e8e41; 
+  }
+  
+  #relatorio-resultado {
+    display: none;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  
+  #codigo-resultado {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  #link-resultado {
+    font-size: 80px;
+    text-decoration: none;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+  }
+  
+  #link-resultado:hover {
+    color: #3e8e41; 
+  }
+  

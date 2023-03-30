@@ -10,11 +10,11 @@ app.set('views', './views');
 /* Configurando o diretório que serve arquivos estáticos.*/
 app.use(express.static('public'));
 
-app.get('/', loginHandler);
+app.get('/', index_buscaHandler);
 
 app.get('/cadastro', cadastroHandler);
 
-app.get('/index_busca', index_buscaHandler);
+app.get('/login', loginHandler);
 
 app.listen(port, listenHandler);
 

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biblioteca Online</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />  
+</head>
+<body>
+    <a href="/login">Entrar como administrador</a>
+	<h1>Busca de Livros</h1>    
+	<form>
+		<label for="titulo">Título:</label>
+		<input type="text" id="titulo"><br><br>
+		<label for="autor">Autor:</label>
+		<input type="text" id="autor"><br><br>
+        <label for="id">Código:</label>
+		<input type="text" id="id"><br><br>
+		<button type="button" onclick="buscarLivros()">Buscar</button>
+	</form>
+	<br>
+
+	<table id="tabela-resultados">
+		<thead>
+			<tr>
+				<th>Título</th>
+				<th>Autor</th>
+				<th>Ano</th>
+                <th>Categoria</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	
+    <div id="relatorio-resultado" style="display:outside;">
+		<p>Código: <span id="codigo-resultado"></span></p>
+		<p><a id="link-resultado" href=" "></a></p>
+		<button type="button" class="print-button" onclick="window.print()" && onclick="gerarRelatorio()">Imprimir resultado</button>
+		<div id="resultado-"></div>
+	</div>
+
+    <script>
+		// Dados mockados
+		const livros = [
+            {titulo: "Orgulho e Preconceito", categoria: "Romance", autor: "Jane Austen", ano: 1813},
+            {titulo: "O Grande Gatsby", categoria: "Romance", autor: "F. Scott Fitzgerald", ano: 1925},
+            {titulo: "O Senhor dos Anéis", categoria: "Fantasia", autor: "J.R.R. Tolkien", ano: 1954},
+            {titulo: "Matemática Financeira", categoria: "Didático", autor: "Edgar Abreu", ano: 2010},
+            {titulo: "Introdução à Sociologia", categoria: "Didático", autor: "Anthony Giddens", ano: 1989},
+            {titulo: "História Geral", categoria: "Didático", autor: "Marcelo Rebelo", ano: 2015},
+            {titulo: "Física Básica", categoria: "Didático", autor: "Moysés Nussenzveig", ano: 2008},
+            {titulo: "Química Orgânica", categoria: "Didático", autor: "T.W. Graham Solomons", ano: 1980},
+            {titulo: "Harry Potter e a Pedra Filosofal", categoria: "Fantasia", autor: "J.K. Rowling", ano: 1997},
+            {titulo: "Harry Potter e a Câmara Secreta", categoria: "Fantasia", autor: "J.K. Rowling", ano: 1998},
+            {titulo: "Harry Potter e o Prisioneiro de Azkaban", categoria: "Fantasia", autor: "J.K. Rowling", ano: 1999},
+            {titulo: "Harry Potter e o Cálice de Fogo", categoria: "Fantasia", autor: "J.K. Rowling", ano: 2000},
+            {titulo: "Harry Potter e a Ordem da Fênix", categoria: "Fantasia", autor: "J.K. Rowling", ano: 2003},
+            {titulo: "Harry Potter e o Enigma do Príncipe", categoria: "Fantasia", autor: "J.K. Rowling", ano: 2005},
+            {titulo: "Harry Potter e as Relíquias da Morte", categoria: "Fantasia", autor: "J.K. Rowling", ano: 2007} 
+        ];
+
+		// Função para realizar a busca
+		function buscarLivros() {
+			// Obter valores dos campos de busca
+			const titulo = document.getElementById("titulo").value;
+			const autor = document.getElementById("autor").value;
+
+			// Filtrar livros de acordo com os critérios de busca
+			const resultados = livros.filter(livro => {
+				const tituloMatch = livro.titulo.toLowerCase().includes(titulo.toLowerCase());
+				const autorMatch = livro.autor.toLowerCase().includes(autor.toLowerCase());
+				return tituloMatch && autorMatch;
+			});
+
+			// Exibir resultados na tabela
+			const tabela = document.getElementById("tabela-resultados");
+			resultados.forEach(livro => {
+				const row = tabela.insertRow();
+				const cellTitulo = row.insertCell(0);
+				const cellAutor = row.insertCell(1);
+				const cellAno = row.insertCell(2);
+                const cellCategoria = row.insertCell(3);
+				cellTitulo.innerHTML = livro.titulo;
+				cellAutor.innerHTML = livro.autor;
+				cellAno.innerHTML = livro.ano;
+                cellCategoria.innerHTML = livro.categoria;
+			});
+
+			// Gerar código para recuperar resultados
+			const codigo = Math.floor(Math.random() * 90000) + 10000;
+			document.getElementById("codigo-resultado").innerHTML = codigo;
+			document.getElementById("codigo-resultado").style.display = "block";
+			document.getElementById("relatorio-resultado").style.display = "block";
+			document.getElementById("link-resultado").href = "#resultado-" + codigo;
+		}
+
+		// Função para gerar relatório
+		function gerarRelatorio() {
+			const codigo = document.getElementById("codigo-resultado").innerHTML;
+			const tabela = document.getElementById("tabela-resultados").innerHTML;
+			const relatorio = "<h2>Resultado da Busca #" + codigo + "</h2>" + tabela;
+			document.getElementById("resultado-" + codigo).innerHTML = relatorio;
+		}
+        
+	</script>
+
+</body>
+</html>
+
+
+
+
+

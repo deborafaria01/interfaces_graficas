@@ -7,7 +7,7 @@
 #### Integrantes: Debora Faria 
  Minha nota é 10
 
-Para executar a aplicação, dentro da pasta src, da linha de comando digitar:
+#### Para executar a aplicação, dentro da pasta src, da linha de comando digitar:
 
 ```console
 npm install

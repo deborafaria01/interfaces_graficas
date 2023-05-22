@@ -38,6 +38,25 @@
 
 		<button  id="meuBotao" type="submit">Cadastrar</button>
 	</form>
+	<script>
+		// Seleciona o formulário
+		const form = document.querySelector('form');
+
+		// Verifica se todos os campos foram preenchidos
+		if (titulo && categoria && autor && data) {
+			// Exibe a mensagem de sucesso
+			alert('Livro cadastrado com sucesso!');
+			
+			// Limpa os campos do formulário
+			document.getElementById('titulo').value = '';
+			document.getElementById('categoria').value = '';
+			document.getElementById('autor').value = '';
+			document.getElementById('data').value = '';
+		} else {
+			// Exibe uma mensagem de erro caso algum campo esteja vazio
+			alert('Por favor, preencha todos os campos.');
+		};		
+    </script>
 </body>
 </html>
 

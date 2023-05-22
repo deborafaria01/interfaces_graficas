@@ -1,5 +1,19 @@
-<%# A linha abaixo carrega no template o conteúdo total do arquivo header.ejs%>
-<%-include('base_header') -%>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <nav>
+		<ul>
+            <li><a href="/listar_projetos">Listar Livros</a></li>
+            <li><a href="/adicionarProjetoForm">Adicionar Livro</a></li>
+            <li><a href="/">Buscar</a></li>
+            <li><a href="/login">Sair</a>	</li>
+		</ul>
+	</nav>
     <ull>
     <% for(var i=0; i< lista_projetos.length; ++i) { %>        
         <lii> 

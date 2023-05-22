@@ -1,22 +1,21 @@
-/* Exemplo de CSS servido estaticamente pelo Express.
-Autor: Fabrício G. M. de Carvalho
-*/
 body{
-    background-color:aquamarine;
+    font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
 }
 
-ul{
+ull{
     list-style: none;
 }
 
-li{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10pt;
-    width: 150pt;
-    height: 150pt;
-    background-color: yellow;
+lii{
+    display: inline-block;
+    justify-content: center;
+    margin-left: 40pt;
+    margin-right: 40pt;
+    margin-top: 15pt;
+    width: 130pt;
+    height: 120pt;
+    background-color: rgb(209, 209, 203);
     border-radius: 20%;
     text-align: center;
     padding-top: 70pt;
@@ -38,12 +37,30 @@ form{
     padding: 20px;
 }
 
-nav{
-    display: block;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  

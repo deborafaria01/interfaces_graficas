@@ -25,13 +25,13 @@ service.start();
 /* Configurando o diretório que serve arquivos estáticos.*/
 app.use(express.static('src/public'));
 
-app.get('/', listProjectHandler);
+app.get('/listar_projetos', listProjectHandler);
 
 app.get('/adicionarProjetoForm', addProjectHandlerForm);
 
 app.post('/adicionarProjeto', addProjectHandler);
 
-app.get('/index_busca', index_buscaHandler);
+app.get('/', index_buscaHandler);
 
 app.get('/login', loginHandler);
 

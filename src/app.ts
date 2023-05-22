@@ -1,4 +1,3 @@
-/* importando o express */
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express();
@@ -9,7 +8,6 @@ import { Projeto } from "./models/model"
 
 /* importanto o data source inicializado */
 import {Service} from "./models/services";
-
 
 /* Configurando a template engine. */
 app.set('view engine', 'ejs');
